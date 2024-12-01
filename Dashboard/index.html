@@ -55,9 +55,7 @@
   <body>
 
 
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top"
-    >
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">I-Click</a>
         <button
@@ -68,17 +66,27 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
+    
         <div class="collapse navbar-collapse" id="navbarContent">
           <div class="d-flex align-items-center ms-auto">
-
+            <!-- Wishlist Icon -->
             <a href="wishlist.html" class="nav-link me-3 wishlist-link">
               <i class="bi bi-heart"></i>
             </a>
+    
+            <!-- Cart Icon -->
             <a href="cart-page.html" class="nav-link me-3 cart-link">
               <i class="bi bi-cart"></i>
               <span id="cart-count" class="badge bg-danger" style="position: absolute; top: -1px; right: 10px;">0</span>
             </a>
+    
+            <!-- Profile Icon -->
+            <a href="javascript:void(0);" class="nav-link me-3 profile-link" onclick="checkLoginStatus()">
+              <i class="bi bi-person-circle" style="font-size: 24px;"></i>
+            </a>
+
+    
+            <!-- Login State Container -->
             <div id="loginStateContainer">
               <!-- Login state content -->
             </div>
@@ -86,6 +94,7 @@
         </div>
       </div>
     </nav>
+    
 
     <!-- Hero Section -->
     <div class="container my-5">
@@ -943,6 +952,8 @@
     <script src="../Script/handler.js"></script>
     <script src="../Script/Shopping-cart.js"></script>
     <script src="../Script/cart-page.js"></script>
+    <script src="../Script/profile.js"></script>
+
     <!-- <script src="../Script/cart-hover.js"></script> -->
 
     <script>
