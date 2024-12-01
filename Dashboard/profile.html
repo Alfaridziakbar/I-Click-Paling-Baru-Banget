@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <title>Edit Profil</title>
+    <style>
+        .navbar {
+            background-color: white !important;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .navbar-brand {
+            font-weight: 500;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+        .profile-picture-container {
+            position: relative;
+            display: inline-block;
+        }
+        .upload-button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">I-Click</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-4">Edit Profil Saya</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <!-- Foto Profil -->
+                <div class="profile-picture-container">
+                    <img id="profile-picture" class="profile-picture" src="https://via.placeholder.com/150" alt="Profile Picture">
+                    <input type="file" id="profile-picture-input" style="display: none;" accept="image/*">
+                    <button class="upload-button" onclick="document.getElementById('profile-picture-input').click()">
+                        <i class="fa fa-camera" style="width: 25px ;"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" class="form-control" placeholder="Masukkan nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Masukkan email">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat</label>
+                        <textarea id="address" class="form-control" rows="3" placeholder="Masukkan alamat"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Masukkan nomor telepon">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Simpan Perubahan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 I-Click. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Profil Picture Handling
+        const profilePicture = document.getElementById('profile-picture');
+        const profilePictureInput = document.getElementById('profile-picture-input');
+
+        profilePictureInput.addEventListener('change', function() {
+            const file = profilePictureInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePicture.src = e.target.result;
+                    localStorage.setItem('profilePicture', e.target.result); // Simpan di LocalStorage
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Profile Form Handling
+        const profileForm = document.getElementById('profile-form');
+        profileForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            const profileData = {
+                name,
+                email,
+                address,
+                phone,
+            };
+
+            localStorage.setItem('profileData', JSON.stringify(profileData));
+            alert('Profil berhasil diperbarui!');
+        });
+
+        // Load Profile Data
+        window.onload = function() {
+            const savedProfileData = JSON.parse(localStorage.getItem('profileData'));
+            if (savedProfileData) {
+                document.getElementById('name').value = savedProfileData.name || '';
+                document.getElementById('email').value = savedProfileData.email || '';
+                document.getElementById('address').value = savedProfileData.address || '';
+                document.getElementById('phone').value = savedProfileData.phone || '';
+            }
+
+            const savedProfilePicture = localStorage.getItem('profilePicture');
+            if (savedProfilePicture) {
+                profilePicture.src = savedProfilePicture;
+            }
+        };
+    </script>
+</body>
+</html>
