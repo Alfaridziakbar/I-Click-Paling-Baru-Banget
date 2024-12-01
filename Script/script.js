@@ -38,3 +38,17 @@ const carousel = new bootstrap.Carousel(document.getElementById('heroCarousel'),
     interval: 3000,
     wrap: true
 });
+
+//transaksi token
+
+try{
+    const response = fetch('payment/placeOrder.php', {
+        method: 'POST',
+        body: data,
+    });
+    const token = response.text();
+    // console.log(token);
+    window.snap.pay('TRANSACTION TOKEN HERE');
+}catch(err){
+    console.log(err.message);
+}

@@ -22,15 +22,18 @@ require_once dirname(__FILE__) . '/midtrans-php-master/Midtrans.php';
 $params = array(
     'transaction_details' => array(
         'order_id' => rand(),
-        'gross_amount' => 10000,
+        'gross_amount' => $_POST['itemTotal'],
     ),
+    'item_detail'=>json-decode($_POST['item.title'],true),
     'customer_details' => array(
-        'first_name' => 'budi',
-        'last_name' => 'pratama',
-        'email' => 'budi.pra@example.com',
-        'phone' => '08111222333',
+        'first_name' => $_POST['name'],
+        // 'last_name' => 'pratama',
+        'email' => $_POST['email'],
+        'phone' => $_POST['phone'],
+        'address' => $_POST['address'],
     ),
 );
 
 $snapToken = \Midtrans\Snap::getSnapToken($params);
+echo $snapToken;
 ?>
