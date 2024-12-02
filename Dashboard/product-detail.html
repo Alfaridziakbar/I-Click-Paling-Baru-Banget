@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="../style/style.css"/>
+    <script type="text/javascript"
+		src="https://app.stg.midtrans.com/snap/snap.js"
+    data-client-key="SB-Mid-client-pkORmHJnQnn4rzQB"></script>
     <style>
         .navbar {
               background-color: white !important;
@@ -29,18 +32,18 @@
           }
 
           .cart-link {
-                position: relative; /* Makes it the parent for the absolute-positioned badge */
+                position: relative; 
             }
 
             #cart-count {
-                position: absolute; /* Allows the badge to be positioned relative to the cart icon */
-                top: -10px; /* Adjusts the vertical position of the badge */
-                right: -10px; /* Adjusts the horizontal position */
-                transform: translate(50%, -50%); /* Centers the badge in the top-right corner */
-                font-size: 12px; /* Adjusts the size of the badge */
-                padding: 4px 6px; /* Adjusts padding inside the badge */
-                border-radius: 50%; /* Ensures the badge is circular */
-                z-index: 10; /* Ensures it stays above the icon */
+                position: absolute; 
+                top: -10px; 
+                right: -10px; 
+                transform: translate(50%, -50%); 
+                font-size: 12px; 
+                padding: 4px 6px; 
+                border-radius: 50%;
+                z-index: 10; 
             }
       </style>
 </head>
@@ -114,17 +117,7 @@
                         </div>
                     </div>
 
-                    <!-- Action Buttons -->
-                    <!-- <div class="d-flex">
-                        <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
-                        <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
-                    </div> -->
                     <div id="product-detail" data-id="1" data-name="Produk A" data-price="50000">
-                        <!-- Tombol Tambah ke Keranjang dan Beli Sekarang -->
-                        <!-- <div class="d-flex">
-                            <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
-                            <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
-                        </div> -->
                         <div class="d-flex">
                             <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
                             <button class="btn btn-secondary flex-fill me-2" onclick="addToWishlist()">Tambah ke Wishlist</button>

@@ -35,84 +35,70 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form - Brave Coder</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Forgot Password - Brave Coder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: rgba(99, 194, 110, 0.1);
-            min-height: 100vh;
-        }
-        .form-container {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.1);
-        }
-        .brand-side {
-            background: #00c16e;
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-        }
-        .btn-primary {
-            background-color: #00c16e;
-            border-color: #00c16e;
-        }
-        .btn-primary:hover {
-            background-color: #4ca356;
-            border-color: #4ca356;
-        }
-        .social-icons i {
-            font-size: 1.2rem;
-            margin: 0 0.5rem;
-        }
-        .close-btn {
-            position: absolute;
-            right: -5px;
-            top: -5px;
-            background: #62c16e;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="d-flex align-items-center py-4">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="position-relative">
-                    <!-- <div class="close-btn">
-                        <i class="fas fa-times"></i>
-                    </div> -->
-                    <div class="row form-container">
-                        <div class="col-md-6 brand-side d-flex align-items-center justify-content-center p-5">
-                            <img src="images/image3.svg" alt="" class="img-fluid">
+<body class="font-['Poppins'] bg-[rgba(99,194,110,0.1)] min-h-screen flex items-center justify-center py-4">
+    <div class="container mx-auto">
+        <div class="flex justify-center">
+            <div class="w-full max-w-4xl relative">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Brand Side -->
+                        <div class="md:w-1/2 bg-[#00c16e] flex items-center justify-center p-8">
+                            <img src="images/image3.svg" alt="" class="w-full max-w-md">
                         </div>
-                        <div class="col-md-6 p-5">
-                            <h2 class="mb-3">Forgot Password</h2>
-                            <p class="text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        
+                        <!-- Form Side -->
+                        <div class="md:w-1/2 p-8">
+                            <h2 class="text-2xl font-bold mb-3">Forgot Password</h2>
+                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                             
-                            <?php echo $msg; ?>
+                            <!-- Error Message Placeholder -->
+                            <div id="message-container" class="mb-4">
+                                <?php echo $msg; ?>
+                            </div>
 
-                            <form method="post" action="">
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" name="email" placeholder="Enter Your Email" required>
+                            <!-- Forgot Password Form -->
+                            <form method="post" action="" class="space-y-4">
+                                <div>
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        placeholder="Enter Your Email" 
+                                        required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00c16e]"
+                                    >
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-primary w-100">Send Reset Link</button>
+                                <button 
+                                    type="submit" 
+                                    name="submit" 
+                                    class="w-full bg-[#00c16e] text-white py-2 rounded-md hover:bg-[#4ca356] transition duration-300"
+                                >
+                                    Send Reset Link
+                                </button>
                             </form>
 
-                            <div class="text-center mt-4">
-                                <p>Back to! <a href="index.php" class="text-decoration-none">Login</a>.</p>
-                                <div class="social-icons mt-3">
-                                    <i class="fab fa-facebook text-primary"></i>
-                                    <i class="fab fa-twitter text-info"></i>
-                                    <i class="fab fa-pinterest text-danger"></i>
+                            <!-- Footer Links -->
+                            <div class="text-center mt-6">
+                                <p class="text-gray-600">
+                                    Back to! 
+                                    <a href="index.php" class="text-[#00c16e] hover:underline">Login</a>
+                                </p>
+                                
+                                <!-- Social Icons -->
+                                <div class="flex justify-center space-x-4 mt-4">
+                                    <a href="#" class="text-blue-600 hover:text-blue-700">
+                                        <i class="fab fa-facebook text-2xl"></i>
+                                    </a>
+                                    <a href="#" class="text-blue-400 hover:text-blue-500">
+                                        <i class="fab fa-twitter text-2xl"></i>
+                                    </a>
+                                    <a href="#" class="text-red-600 hover:text-red-700">
+                                        <i class="fab fa-pinterest text-2xl"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -122,12 +108,6 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
-    <script>
-        document.querySelector('.close-btn').addEventListener('click', function() {
-            this.closest('.position-relative').style.display = 'none';
-        });
-    </script>
 </body>
 </html>

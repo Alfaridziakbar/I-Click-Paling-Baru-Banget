@@ -3,6 +3,7 @@ ob_start();
 session_start();
 
 include 'config.php';
+include 'header.php';
 $msg = "";
 
 if (isset($_POST['submit'])) {
@@ -64,41 +65,11 @@ if (isset($_POST['guest_login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        .divider {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 20px 0;
-        }
-        .divider::before,
-        .divider::after {
-            content: "";
-            flex: 1;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .divider span {
-            padding: 0 10px;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        .btn-guest {
-            background-color: #f8f9fa;
-            border-color: #dee2e6;
-            color: #6c757d;
-        }
-        .btn-guest:hover {
-            background-color: #e9ecef;
-            border-color: #dee2e6;
-            color: #495057;
-        }
-    </style>
-    <!-- <link rel="stylesheet" href="/style/style.css"> -->
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
+<<<<<<< HEAD
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
     <main class="container">
         <div class="row justify-content-center">
@@ -167,10 +138,76 @@ if (isset($_POST['guest_login'])) {
                         </div>
                     </div>
                 </div>
+=======
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-8 mt-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">Buat Akun Baru</h2>
+            <p class="text-gray-600 mt-2">Daftar untuk membuat akun baru</p>
+        </div>
+        <?php echo $msg; ?>
+        <form method="post" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                    Nama Lengkap
+                </label>
+                <input type="text" id="name" name="name" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Masukkan nama lengkap">
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                    Email
+                </label>
+                <input type="email" id="email" name="email" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="nama@email.com">
+            </div>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                    Password
+                </label>
+                <input type="password" id="password" name="password" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="••••••••">
+            </div>
+            <div>
+                <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">
+                    Konfirmasi Password
+                </label>
+                <input type="password" id="password_confirmation" name="password_confirmation" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-8"
+                    placeholder="••••••••">
+            </div>
+            <button type="submit" name="submit"
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-8">
+                Daftar
+            </button>
+        </form>
+        <div class="relative my-6">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-gray-300"></div>
+            </div>
+            <div class="relative flex justify-center text-sm">
+                <span class="px-2 bg-white text-gray-500">OR</span>
+>>>>>>> d159032c2a63cb779b392c4c105d1d902892eeae
             </div>
         </div>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <form method="post" class="mb-6">
+            <button type="submit" name="guest_login"
+                class="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <i class="fas fa-user mr-2"></i>Continue as Guest
+            </button>
+        </form>
+        <p class="text-center text-sm text-gray-600">
+            Sudah punya akun?
+            <a href="index.php" class="font-medium text-blue-600 hover:underline">
+                Login
+            </a>
+        </p>
+    </div>
 </body>
 </html>
