@@ -6,22 +6,36 @@ include 'config.php';
 $msg = "";
 
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, md5($_POST['password']));
-    $confirm_password = mysqli_real_escape_string($conn, md5($_POST['confirm-password']));
-    $query = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
-    $result = mysqli_query($conn, $query);
 
-    if (mysqli_num_rows($result) > 0) {
+    function generate_uuid_v4() {
+        $data = random_bytes(16); // Generate 16 bytes random data
+        // Set versi ke 4 (0100)
+        $data[6] = chr((ord($data[6]) & 0x0f) | 0x40);
+        // Set variant ke 2 (10xx)
+        $data[8] = chr((ord($data[8]) & 0x3f) | 0x80);
+    
+        // Formatkan UUID sesuai standar
+        return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+    }
+    $name = pg_escape_string($conn, $_POST['name']);
+    $email = pg_escape_string($conn, $_POST['email']);
+    $password = pg_escape_string($conn, md5($_POST['password']));
+    $confirm_password = pg_escape_string($conn, md5($_POST['confirm-password']));
+    $query = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
+    $result = pg_query($conn, $query);
+
+    if (pg_num_rows($result) > 0) {
         $msg = "<div class='alert alert-danger'>Email and password combination already exists.</div>";
     } else {
-        if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
+        if (pg_num_rows(pg_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
             $msg = "<div class='alert alert-danger'>{$email} - This email address already exists.</div>";
         } else {
             if ($password === $confirm_password) {
-                $sql = "INSERT INTO users (name, email, password) VALUES ('{$name}', '{$email}', '{$password}')";
-                $result = mysqli_query($conn, $sql);
+                $id = generate_uuid_v4();
+                // $id = 2;
+                // var_dump($uuid);exit;
+                $sql = "INSERT INTO users (user_id,name, email, password) VALUES ('{$id}','{$name}', '{$email}', '{$password}')";
+                $result = pg_query($conn, $sql);
 
                 if ($result) {
                     $_SESSION['SESSION_EMAIL'] = $email;
@@ -134,7 +148,7 @@ if (isset($_POST['guest_login'])) {
                                 <div class="divider">
                                     <span>OR</span>
                                 </div>
-                                <form action="" method="post">
+                                <form action="/I-Click-Paling-Baru-Banget/login/index.php" method="post">
                                     <div class="d-grid">
                                         <button type="submit" name="guest_login" class="btn btn-guest">
                                             <i class="fas fa-user me-2"></i>Continue as Guest

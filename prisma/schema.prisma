@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  user_id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String 
+  phone String
+  address String
+  created_at DateTime
+  
+  @@map("users")
+}
+
+model Product {
+  product_id Int @id @default(autoincrement())
+  name String
+  desc String
+  price Decimal
+  stock Int
+  category_id Int
+  image_url String
+  created_at DateTime
+
+  @@map("products")
+}
+
+model Category{
+  category_id Int @id @default(autoincrement())
+  name String
+}
+
+model Cart{
+  cart_id Int @id @default(autoincrement())
+  user_id Int 
+  product_id Int
+  quantity Int
+}
+
+model Orders {
+  order_id Int @id @default(autoincrement())
+  user_id Int
+  total_amount Decimal
+  status OrderStatus
+  created_at DateTime
+}
+
+enum OrderStatus {
+  pending
+  paid
+  shipped
+  delivered
+  cancelled
+}
+
+model Order_items{
+  order_item_id Int @id @default(autoincrement())
+  order_id Int
+  product_id Int
+  quantity Int
+  price Decimal
+}
+
+model Payments{
+  payment_id Int @id @default(autoincrement())
+  order_id Int
+  amount Decimal
+  payment_method PaymentMethod
+  payment_status PaymentStatus
+  paid_at DateTime
+}
+
+enum PaymentMethod {
+  credit_card
+  bank_transfer
+  e_wallet
+}
+
+enum PaymentStatus {
+  pending
+  success
+  failed
+}

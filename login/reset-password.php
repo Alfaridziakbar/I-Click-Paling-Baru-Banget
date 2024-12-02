@@ -9,21 +9,21 @@ header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
-    $email = mysqli_real_escape_string($conn, $input['email']);
+    $email = pg_escape_string($conn, $input['email']);
     
     // Cari email di database
     $query = "SELECT * FROM users WHERE email='$email'";
-    $result = mysqli_query($conn, $query);
+    $result = pg_query($conn, $query);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (pg_num_rows($result) > 0) {
         $token = bin2hex(random_bytes(50));
         $expire = date("Y-m-d H:i:s", strtotime('+1 hour'));  // Token berlaku selama 1 jam
         $update_query = "UPDATE users SET reset_token='$token', reset_token_expire='$expire' WHERE email='$email'";
-        if (mysqli_query($conn, $update_query)) {
+        if (pg_query($conn, $update_query)) {
             $mail = new PHPMailer(true);
 
             try {
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                $mail->SMTPDebug = $SMTP::DEBUG_SERVER;                      //Enable verbose debug output
                 $mail->isSMTP();                                            //Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
