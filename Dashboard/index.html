@@ -98,6 +98,23 @@
         .main-content {
         display: none;
         }
+
+        /* Perbaikan untuk cart-link */
+    .cart-link {
+      position: relative; /* Tambahkan ini agar badge terikat dengan benar */
+    }
+
+    #cart-count {
+      position: absolute;
+      top: -5px; /* Sesuaikan posisi badge di atas ikon */
+      right: -5px;
+      background-color: #dc3545; /* Warna merah badge */
+      color: white;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      padding: 0.25em 0.4em;
+    }
+
     
         .carousel-image {
         transition: transform 0.3s ease, opacity 0.3s easce;
@@ -125,16 +142,15 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
+  
         <div class="collapse navbar-collapse" id="navbarContent">
           <div class="d-flex align-items-center ms-auto">
-
             <a href="wishlist.html" class="nav-link me-3 wishlist-link">
               <i class="bi bi-heart" style="color: aliceblue;"></i>
             </a>
             <a href="cart-page.html" class="nav-link me-3 cart-link">
               <i class="bi bi-cart" style="color: aliceblue;"></i>
-              <span id="cart-count" class="badge bg-danger" style="position: absolute; top: -1px; right: 10px;">0</span>
+              <span id="cart-count" class="badge bg-danger">0</span>
             </a>
             <div id="loginStateContainer">
               <!-- Login state content -->
