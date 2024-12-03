@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Navbar Styling */
 body {
+    background-color: #D9F5FB;
     padding-top: 76px;
     min-height: 100vh;
     display: flex;
@@ -76,6 +78,12 @@ body {
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 30px;
+}
+
+.okee {
+    font-family: "Poppins", serif;
+    font-style: italic;
+    font-size: 20px;
 }
 
 button a {
@@ -218,7 +226,7 @@ button a {
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555; 
   }
 
 
@@ -228,7 +236,7 @@ button a {
 .Footer{
     color: white;
     width: 100%;
-    background-color: #0073b7;
+    background-color: #03045E;
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
