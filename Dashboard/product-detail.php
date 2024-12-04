@@ -15,6 +15,7 @@
     data-client-key="SB-Mid-client-pkORmHJnQnn4rzQB"></script>
     <style>
         .navbar {
+<<<<<<< HEAD:Dashboard/product-detail.php
               background-color: #03045E !important;
               border-bottom: 1px solid #dee2e6;
           }
@@ -30,6 +31,12 @@
             font-size: 24px;
             margin-right: 15px;
           }
+=======
+        background-color: #03045E !important;
+        border-bottom: 1px solid;
+        z-index: 1000;
+        }
+>>>>>>> 9ab00a3c405dfccd24a5dd6f184a79fdbf5fb455:Dashboard/product-detail.html
 
           .cart-link {
                 position: relative; 
@@ -48,9 +55,10 @@
       </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
         <div class="container">
+<<<<<<< HEAD:Dashboard/product-detail.php
             <a class="navbar-brand" href="#"><img src="../Images/group 1.png" alt=""
                 style="width: 120px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -75,13 +83,40 @@
                         <!-- Login state content -->
                     </div>
                 </div>
+=======
+          <a class="navbar-brand" href="index.html"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="d-flex align-items-center ms-auto">
+              <a href="wishlist.html" class="nav-link me-3 wishlist-link">
+                <i class="bi bi-heart" style="color: aliceblue;"></i>
+              </a>
+              <a href="cart-page.html" class="nav-link me-3 cart-link">
+                <i class="bi bi-cart" style="color: aliceblue;"></i>
+                <span id="cart-count" class="badge bg-danger">0</span>
+              </a>
+              <div id="loginStateContainer">
+                <a href="login.html" class="btn-login btn btn-primary btn-lg px-4 me-md-2 fw-bold">Masuk</a>
+                <a href="register.html" class="btn-register btn btn-primary btn-lg px-4 me-md-2 fw-bold">Daftar</a>
+              </div>
+>>>>>>> 9ab00a3c405dfccd24a5dd6f184a79fdbf5fb455:Dashboard/product-detail.html
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
 
+<<<<<<< HEAD:Dashboard/product-detail.php
     <!-- Product Detail Content -->
     <div class="container mt-5 pt-5">
         <div class="bg-blue-200 rounded-lg shadow-md p-6">
+=======
+     <!-- Product Detail Content -->
+     <div class="container mt-5 pt-5">
+        <div class="bg-white rounded-lg shadow-md p-6">
+>>>>>>> 9ab00a3c405dfccd24a5dd6f184a79fdbf5fb455:Dashboard/product-detail.html
             <div class="row">
                 <!-- Product Image -->
                 <div class="col-md-6">
@@ -118,7 +153,17 @@
                         </div>
                     </div>
 
+                    <!-- Action Buttons -->
+                    <!-- <div class="d-flex">
+                        <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
+                        <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
+                    </div> -->
                     <div id="product-detail" data-id="1" data-name="Produk A" data-price="50000">
+                        <!-- Tombol Tambah ke Keranjang dan Beli Sekarang -->
+                        <!-- <div class="d-flex">
+                            <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
+                            <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
+                        </div> -->
                         <div class="d-flex">
                             <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
                             <button class="btn btn-secondary flex-fill me-2" onclick="addToWishlist()">Tambah ke Wishlist</button>
@@ -159,5 +204,6 @@
             }
         }
     </script>
+        <script src="../Script/product-detail.js"></script>
 </body>
 </html>
