@@ -11,23 +11,39 @@
     <script src="../Script/wishlist.js"></script>
     <title>wishlist</title>
     <style>
-    .navbar {
-            background-color: #03045E !important;
-            border-bottom: 1px solid;
-            z-index: 1000;
-            }
-      .navbar-brand {
-        font-weight: 500;
-      }
-      body{
-        background-color: #d9f5fb;
-      }
-    </style>
+        .navbar {
+             background-color: #03045E !important;
+             border-bottom: 1px solid;
+             z-index: 1000;
+        }
+        .navbar-brand {
+             font-weight: 500;
+        }
+        body {
+             background-color: #d9f5fb;
+        }
+        
+        /* Atur gambar agar memiliki ukuran yang konsisten */
+        .card-img-top {
+             height: 200px; /* Sesuaikan dengan ukuran yang diinginkan */
+             object-fit: cover; /* Agar gambar tetap proporsional dan terpotong jika perlu */
+        }
+        
+        /* Atur tinggi minimum untuk body kartu */
+        .card-body {
+             min-height: 250px; /* Sesuaikan dengan kebutuhan */
+        }
+        </style>
+        
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+            <a href="cart-page.html" class="nav-link me-3 cart-link">
+                <i class="bi bi-cart" style="color: aliceblue;"></i>
+                <span id="cart-count" class="badge bg-danger">0</span>
+              </a>
         </div>
     </nav>
     
