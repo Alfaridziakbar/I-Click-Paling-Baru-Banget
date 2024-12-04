@@ -132,17 +132,11 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#"><img src="../Images/group 1.png" alt=""
-          style="width: 120px;"></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-        >
+        <a class="navbar-brand" href="index.html"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
+    
         <div class="collapse navbar-collapse" id="navbarContent">
           <div class="d-flex align-items-center ms-auto">
             <a href="wishlist.html" class="nav-link me-3 wishlist-link">
@@ -153,12 +147,14 @@
               <span id="cart-count" class="badge bg-danger">0</span>
             </a>
             <div id="loginStateContainer">
-              <!-- Login state content -->
+              <a href="login.html" class="btn-login btn btn-primary btn-lg px-4 me-md-2 fw-bold">Masuk</a>
+              <a href="register.html" class="btn-register btn btn-primary btn-lg px-4 me-md-2 fw-bold">Daftar</a>
             </div>
           </div>
         </div>
       </div>
     </nav>
+    
 
   <!-- Full Page Loading Screen -->
   <div data-aos="fade-down"
@@ -1084,8 +1080,10 @@
           break;
         case 2:
           titleText = 'Lezatnya Binary Bite';
-          descriptionText = 'Binary adalah representasi dasar dari data digital yang digunakan dalam berbagai aplikasi teknologi, termasuk pemrograman dan komputasi data. ' +
-                            'Dengan konsep Binary Bite, kami menghadirkan pengalaman kuliner yang terinspirasi oleh dunia digital. Nikmati berbagai hidangan lezat yang menggabungkan keunikan rasa dengan konsep inovatif yang menarik.';
+          descriptionText = 'Binary Bite adalah usaha kuliner yang berfokus pada pembuatan Brownies dan Cookies Kering dengan cita rasa yang menggugah selera. ' +
+                      'Kelezatan dalam Setiap Gigitan:\nBinary Bite menghadirkan pengalaman menikmati camilan yang dibuat dengan bahan-bahan berkualitas dan resep yang telah teruji. ' +
+                      'Dengan kombinasi tekstur yang sempurna dan rasa yang memanjakan lidah, produk kami cocok untuk menemani berbagai aktivitas Anda, mulai dari bersantai di rumah hingga sebagai hadiah istimewa untuk orang tersayang. ' +
+                      'Mengapa Memilih Binary Bite?\n- Brownies dengan rasa cokelat yang kaya\n- Cookies kering yang renyah dan menggoda\n- Dikemas dengan elegan, cocok untuk segala acara';
           break;
         default:
           titleText = 'Deskripsi Tidak Ditemukan';

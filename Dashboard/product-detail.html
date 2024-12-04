@@ -15,21 +15,10 @@
     data-client-key="SB-Mid-client-pkORmHJnQnn4rzQB"></script>
     <style>
         .navbar {
-              background-color: white !important;
-              border-bottom: 1px solid #dee2e6;
-          }
-          .navbar-brand {
-              font-weight: 500;
-          }
-          .nav-link .bi-cart {
-            font-size: 24px; 
-            margin-right: 15px;
-          }
-
-          .nav-link .bi-heart {
-            font-size: 24px;
-            margin-right: 15px;
-          }
+        background-color: #03045E !important;
+        border-bottom: 1px solid;
+        z-index: 1000;
+        }
 
           .cart-link {
                 position: relative; 
@@ -48,38 +37,34 @@
       </style>
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">I-Click</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <div class="d-flex align-items-center ms-auto">
-                    <!-- <a href="../Dashboard/cart-page.html" class="nav-link me-3">
-                        <i class="bi bi-cart"></i>
-                    </a> -->
-                    <a href="wishlist.html" class="nav-link me-3 wishlist-link">
-                        <i class="bi bi-heart"></i>
-                    </a>
-                    <a href="cart-page.html" class="nav-link me-3 cart-link">
-                        <i class="bi bi-cart"></i>
-                        <span id="cart-count" class="badge bg-danger" style="position: absolute; top: -1px; right: 10px;">0</span>
-                    </a>
-                    
-                    
-                    <div id="loginStateContainer">
-                        <!-- Login state content -->
-                    </div>
-                </div>
+          <a class="navbar-brand" href="index.html"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="d-flex align-items-center ms-auto">
+              <a href="wishlist.html" class="nav-link me-3 wishlist-link">
+                <i class="bi bi-heart" style="color: aliceblue;"></i>
+              </a>
+              <a href="cart-page.html" class="nav-link me-3 cart-link">
+                <i class="bi bi-cart" style="color: aliceblue;"></i>
+                <span id="cart-count" class="badge bg-danger">0</span>
+              </a>
+              <div id="loginStateContainer">
+                <a href="login.html" class="btn-login btn btn-primary btn-lg px-4 me-md-2 fw-bold">Masuk</a>
+                <a href="register.html" class="btn-register btn btn-primary btn-lg px-4 me-md-2 fw-bold">Daftar</a>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
 
-    <!-- Product Detail Content -->
-    <div class="container mt-5 pt-5">
+     <!-- Product Detail Content -->
+     <div class="container mt-5 pt-5">
         <div class="bg-white rounded-lg shadow-md p-6">
             <div class="row">
                 <!-- Product Image -->
@@ -117,7 +102,17 @@
                         </div>
                     </div>
 
+                    <!-- Action Buttons -->
+                    <!-- <div class="d-flex">
+                        <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
+                        <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
+                    </div> -->
                     <div id="product-detail" data-id="1" data-name="Produk A" data-price="50000">
+                        <!-- Tombol Tambah ke Keranjang dan Beli Sekarang -->
+                        <!-- <div class="d-flex">
+                            <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
+                            <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
+                        </div> -->
                         <div class="d-flex">
                             <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
                             <button class="btn btn-secondary flex-fill me-2" onclick="addToWishlist()">Tambah ke Wishlist</button>
@@ -158,5 +153,6 @@
             }
         }
     </script>
+        <script src="../Script/product-detail.js"></script>
 </body>
 </html>
