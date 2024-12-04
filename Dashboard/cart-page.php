@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - I-Click</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
         .navbar {
-
-        background-color: #03045E !important;
-        border-bottom: 1px solid #dee2e6;
-      }
-      .navbar-brand {
-        font-weight: 500;
             background-color: #03045E !important;
             border-bottom: 1px solid;
             z-index: 1000;
-      }
+            }
         .cart-item {
             border-bottom: 1px solid #dee2e6;
             padding: 15px 0;
@@ -38,17 +34,24 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt=""
-                style="width: 120px;"></a>
+            <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
-
+    
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="d-flex align-items-center ms-auto">
+                    <!-- Wishlist Icon -->
+                    <a href="wishlist.html" class="nav-link me-3 wishlist-link">
+                        <i class="bi bi-heart" style="color: aliceblue;"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
+    
 
     <!-- Cart Page Content -->
     <div class="container mt-5 pt-5">

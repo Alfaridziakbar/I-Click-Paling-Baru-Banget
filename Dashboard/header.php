@@ -132,7 +132,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#"><img src="../Images/group 1.png" alt=""
+        <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt=""
           style="width: 120px;"></a>
         <button
           class="navbar-toggler"
@@ -148,7 +148,7 @@
             <a href="wishlist.html" class="nav-link me-3 wishlist-link">
               <i class="bi bi-heart" style="color: aliceblue;"></i>
             </a>
-            <a href="cart-page.html" class="nav-link me-3 cart-link">
+            <a href="cart-page.php" class="nav-link me-3 cart-link">
               <i class="bi bi-cart" style="color: aliceblue;"></i>
               <span id="cart-count" class="badge bg-danger">0</span>
             </a>

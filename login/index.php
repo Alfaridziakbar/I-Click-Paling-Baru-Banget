@@ -12,10 +12,14 @@ if (isset($_POST['submit'])) {
     
     $sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
     $result = pg_query($conn, $sql);
+
+    if (!$result) {
+        die("Query Error: " . pg_last_error($conn));
+    }
     
     if (pg_num_rows($result) === 1) {
         $_SESSION['SESSION_EMAIL'] = $email;
-        header("Location: ../Dashboard/index.html");
+        header("Location: ../Dashboard/index.php");
         exit();
     } else {
         $msg = "<div class='alert alert-danger'>Email or password is incorrect.</div>";
@@ -24,7 +28,7 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['guest_login'])) {
     $_SESSION['SESSION_EMAIL'] = 'guest@example.com';
     $_SESSION['IS_GUEST'] = true;
-    header("Location: ../Dashboard/index.html");
+    header("Location: ../Dashboard/index.php");
     exit();
 }
 ?>
@@ -47,7 +51,7 @@ if (isset($_POST['guest_login'])) {
         </div>
 
         <!-- Login Form -->
-        <form class="space-y-6">
+        <form method="post" class="space-y-6">
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
                     Email
@@ -74,12 +78,9 @@ if (isset($_POST['guest_login'])) {
                         Ingat saya
                     </label>
                 </div>
-                <a href="forgot-password.php" class="text-sm text-blue-600 hover:underline">
-                    Lupa password?
-                </a>
             </div>
 
-            <button type="submit"
+            <button type="submit" name="submit"
                 class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Login
             </button>

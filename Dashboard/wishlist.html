@@ -11,57 +11,56 @@
     <script src="../Script/wishlist.js"></script>
     <title>wishlist</title>
     <style>
-<<<<<<< HEAD
         .navbar {
-        background-color: #03045E !important;
-        border-bottom: 1px solid #dee2e6;
-      }
-      .navbar-brand {
-        font-weight: 500;
-      }
-      .nav-link .bi-cart {
-        font-size: 24px;
-        margin-right: 15px;
-=======
-    .navbar {
-            background-color: #03045E !important;
-            border-bottom: 1px solid;
-            z-index: 1000;
-            }
-      .navbar-brand {
-        font-weight: 500;
-      }
-      body{
-        background-color: #d9f5fb;
->>>>>>> 9ab00a3c405dfccd24a5dd6f184a79fdbf5fb455
-      }
-    </style>
+             background-color: #03045E !important;
+             border-bottom: 1px solid;
+             z-index: 1000;
+        }
+        .navbar-brand {
+             font-weight: 500;
+        }
+        body {
+             background-color: #d9f5fb;
+        }
+        
+        /* Atur gambar agar memiliki ukuran yang konsisten */
+        .card-img-top {
+             height: 200px; /* Sesuaikan dengan ukuran yang diinginkan */
+             object-fit: cover; /* Agar gambar tetap proporsional dan terpotong jika perlu */
+        }
+        
+        /* Atur tinggi minimum untuk body kartu */
+        .card-body {
+             min-height: 250px; /* Sesuaikan dengan kebutuhan */
+        }
+        .wishlist-header {
+    margin-top: 80px; /* Sesuaikan jarak sesuai kebutuhan */
+  }
+
+        </style>
+        
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
         <div class="container">
-<<<<<<< HEAD
-            <a class="navbar-brand" href="index.html"<img src="../Images/group 1.png" alt=""
-            style="width: 120px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-=======
-            <a class="navbar-brand" href="index.html"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
->>>>>>> 9ab00a3c405dfccd24a5dd6f184a79fdbf5fb455
+            <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+            <a href="cart-page.html" class="nav-link me-3 cart-link">
+                <i class="bi bi-cart" style="color: aliceblue;"></i>
+                <span id="cart-count" class="badge bg-danger">0</span>
+              </a>
         </div>
     </nav>
     
 
-    <div class="container my-5">
-        <h1 class="text-center">Wishlist Saya</h1>
-        <div id="wishlist-container" class="row"></div>
-    </div>
+    <div class="container mt-5">
+      <h1 class="text-center wishlist-header">Wishlist Saya</h1>
+      <div id="wishlist-container" class="row"></div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="../Script/product-detail.js"></script>
-    <script src="../Script/handler.js"></script>
-    <script src="../Script/wishlist.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="../Script/product-detail.js"></script>
+  <script src="../Script/handler.js"></script>
+  <script src="../Script/wishlist.js"></script>
 </body>
 </html>
