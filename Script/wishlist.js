@@ -42,8 +42,23 @@ function addToCartFromWishlist(id) {
         
         // Tampilkan notifikasi
         alert("Produk berhasil ditambahkan ke keranjang!");
+
+        // Perbarui jumlah item di navbar
+        updateCartCount();
     }
 }
+
+// Fungsi untuk memperbarui jumlah item di navbar
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Hitung total item
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Panggil updateCartCount saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function() {
+    updateCartCount();
+});
 
 // Fungsi untuk memuat dan menampilkan wishlist
 function loadWishlist() {
@@ -67,7 +82,7 @@ function loadWishlist() {
     // Buat kartu untuk setiap produk di wishlist
     wishlist.forEach(product => {
         const productCard = document.createElement("div");
-        productCard.classList.add("col-md-4", "mb-4");
+        productCard.classList.add("col-12", "col-sm-6", "col-md-4", "mb-4"); // Ubah ke sini
         productCard.innerHTML = `
             <div class="card">
                 <img src="${product.image}" class="card-img-top" alt="${product.name}">

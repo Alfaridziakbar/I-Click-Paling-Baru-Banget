@@ -36,7 +36,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
         <div class="container">
+<<<<<<< HEAD:Dashboard/cart-page.php
             <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+=======
+            <a class="navbar-brand" href="index.html"><img src="../Images/group 1.png" alt="" style="width: 120px;"></a>
+>>>>>>> 2f54b4a27022c89d6a0454d7f333c1f91edda058:Dashboard/cart-page.html
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
