@@ -23,21 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail = new PHPMailer(true);
 
             try {
-<<<<<<< HEAD
-                $mail->SMTPDebug = $SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'YOUR_EMAIL_HERE';                     //SMTP username
-                $mail->Password   = 'YOUR_PASSWORD_HERE';                               //SMTP password
-=======
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
-                $mail->isSMTP();                                           
-                $mail->Host       = 'smtp.gmail.com';                     
-                $mail->SMTPAuth   = true;                                   
-                $mail->Username   = 'YOUR_EMAIL_HERE';                    
-                $mail->Password   = 'YOUR_PASSWORD_HERE';                             
->>>>>>> d159032c2a63cb779b392c4c105d1d902892eeae
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   
                 $mail->Port = 465;
 

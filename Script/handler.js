@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sessionStorage.setItem('selectedProduct', JSON.stringify(product));
       
       // Navigate to product detail page
-      window.location.href = 'product-detail.html';
+      window.location.href = 'product-detail.php';
     });
   });
 });

@@ -74,7 +74,7 @@ if (isset($_POST['guest_login'])) {
                         Ingat saya
                     </label>
                 </div>
-                <a href="#" class="text-sm text-blue-600 hover:underline">
+                <a href="forgot-password.php" class="text-sm text-blue-600 hover:underline">
                     Lupa password?
                 </a>
             </div>
