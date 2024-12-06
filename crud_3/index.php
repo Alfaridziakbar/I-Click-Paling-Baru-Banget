@@ -20,7 +20,7 @@
         <tbody>
             <?php 
             
-    $query = "SELECT * FROM public.produk"; // menghubungkan database
+    $query = "SELECT * FROM public.produk_3"; // menghubungkan database
 
     $result = pg_query($connection, $query); //execute
 

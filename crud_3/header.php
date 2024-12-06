@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Produk</title>
+<!-- Bootstrap CSS -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -132,7 +136,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt=""
+        <a class="navbar-brand" href="../Dashboard/index.php"><img src="../Images/group 1.png" alt=""
           style="width: 120px;"></a>
         <button
           class="navbar-toggler"
@@ -145,10 +149,10 @@
   
         <div class="collapse navbar-collapse" id="navbarContent">
           <div class="d-flex align-items-center ms-auto">
-            <a href="../login/index.php" class="nav-link me-3 wishlist-link">
+            <a href="wishlist.html" class="nav-link me-3 wishlist-link">
               <i class="bi bi-heart" style="color: aliceblue;"></i>
             </a>
-            <a href="../login/index.php" class="nav-link me-3 cart-link">
+            <a href="cart-page.php" class="nav-link me-3 cart-link">
               <i class="bi bi-cart" style="color: aliceblue;"></i>
               <span id="cart-count" class="badge bg-danger">0</span>
             </a>
@@ -159,5 +163,6 @@
         </div>
       </div>
     </nav>
-
-
+</head>
+<body>
+    

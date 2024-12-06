@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<?php include('header_2.php');?>
+<?php include('header.php');?>
 
     <!-- Product Detail Content -->
     <div class="container mt-5 pt-5">
@@ -59,9 +59,11 @@
                     </div>
 
                         <div class="d-flex">
+                        <a href="../login/index.php">
                             <button id="add-to-cart" class="btn btn-primary flex-fill me-2">Tambah ke Keranjang</button>
                             <button class="btn btn-secondary flex-fill me-2" onclick="addToWishlist()">Tambah ke Wishlist</button>
                             <button id="buy-now" class="btn btn-success flex-fill">Beli Sekarang</button>
+                        </a>
                         </div>
                     </div>
                 </div>
@@ -70,85 +72,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="../Script/nav2.js"></script>
+    <script src="../Script/nav.js"></script>
     <script src="../Script/product-detail.js"></script>
     <script src="../Script/handler.js"></script>
     <script src="../Script/price.js"></script>
     <script src="../Script/cart-page.js"></script>
     <script src="../Script/wishlist.js"></script>
-    <script 
-        type="text/javascript"
-        src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="YOUR_CLIENT_KEY"></script>
-        <script>
-        document.getElementById("buy-now").addEventListener("click", function () {
-    const productDetail = document.getElementById("product-detail");
-
-    // Get product details
-    const product = {
-        id: productDetail.dataset.id,
-        name: productDetail.dataset.name,
-        price: parseInt(document.getElementById("product-price").textContent.replace(/[^\d]/g, "")), // Extract price as number
-    };
-
-    if (isNaN(product.price) || product.price <= 0) {
-        alert("Harga produk tidak valid!");
-        return;
-    }
-
-    // Prepare transaction data for Midtrans
-    const transactionData = {
-        order_id: `ORDER-${Date.now()}`,
-        gross_amount: product.price,
-        item_details: [{
-            id: product.id,
-            name: product.name.slice(0, 5000), // Max 50 characters
-            price: product.price,
-            quantity: 1
-        }],
-        customer_details: {
-            first_name: "John", // Dummy customer data
-            last_name: "Doe",
-            email: "johndoe@example.com",
-            phone: "08123456789"
-        }
-    };
-
-    // Send transaction data to Midtrans
-    fetch("Payment/examples/snap/checkout-process-simple-version.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(transactionData)
-    })
-    .then(response => response.text()) // Get Snap token
-    .then(snapToken => {
-        // Open Midtrans payment gateway
-        snap.pay(snapToken, {
-            onSuccess: function(result) {
-                alert("Pembayaran berhasil!");
-                console.log(result);
-            },
-            onPending: function(result) {
-                alert("Pembayaran sedang diproses.");
-                console.log(result);
-            },
-            onError: function(result) {
-                alert("Pembayaran gagal!");
-                console.log(result);
-            },
-            onClose: function() {
-                alert("Pembayaran ditutup.");
-            }
-        });
-    })
-    .catch(error => {
-        console.error("Error fetching Snap Token:", error);
-        alert("Gagal memproses pembayaran. Silakan coba lagi.");
-    });
-});
-
-    </script>
+    
 </body>
 </html>

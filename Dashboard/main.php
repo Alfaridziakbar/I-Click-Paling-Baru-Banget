@@ -5,7 +5,7 @@ require_once 'dbconn.php';
 
 
 ?>
-<?php include('header.php');?>
+<?php include('header_2.php');?>
   <!-- Full Page Loading Screen -->
   <div data-aos="fade-down"
     id="loading-screen" class="container-fluid">
@@ -162,10 +162,10 @@ require_once 'dbconn.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="../Script/script.js"></script>
-    <script src="../Script/nav.js"></script>
+    <script src="../Script/nav2.js"></script>
     <script src="../Script/img.js"></script>
     <script src="../Script/product-detail.js"></script>
-    <script src="../Script/handler-guess.js"></script>
+    <script src="../Script/handler.js"></script>
     <script src="../Script/Shopping-cart.js"></script>
     <script src="../Script/cart-page.js"></script>
     <!-- <script src="../Script/cart-hover.js"></script> -->

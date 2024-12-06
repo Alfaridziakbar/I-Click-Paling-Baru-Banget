@@ -29,12 +29,12 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    .custom-modal {
+    .Footer {
         background-color: #03045E; /* Ganti dengan warna yang Anda inginkan */
         color: white; /* Ganti warna teks jika diperlukan */
         font-family: "Poppins", serif;
     }
-    .custom-modal h5{
+    h2{
       font-weight: 700;
       font-style: italic; 
     }

@@ -6,7 +6,7 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
 }
 
-$query = "DELETE from public.produk where id = '$id'";
+$query = "DELETE from public.produk_3 where id = '$id'";
 
 $result = pg_query($connection, $query);
 

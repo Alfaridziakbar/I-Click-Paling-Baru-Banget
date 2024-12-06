@@ -4,8 +4,8 @@ $all_product = pg_query($connection, $sql);
 ?>
 <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="okee mb-0">Binary Bite</h5>
-          <a href="#" class="text-primary text-decoration-none"
-            >Lihat Semua Barang</a>
+          <a href="..\crud_3\login.php" class="text-primary text-decoration-none"
+            >Tambah barang</a>
         </div>
 <div class="products-scroll-container">
     <button class="scroll-button scroll-left hidden" id="scrollLeft1">

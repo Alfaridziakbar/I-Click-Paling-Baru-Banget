@@ -7,7 +7,7 @@ include('header.php');?>
 if(isset($_GET['id'])){
     $id = $_GET['id'];
 
-    $query = "SELECT * FROM produk where id = '{$id}' "; // menghubungkan database
+    $query = "SELECT * FROM public.produk_2 where id = '{$id}' "; // menghubungkan database
 
     $result = pg_query($connection, $query); //execute
 
@@ -34,7 +34,7 @@ if(isset($_GET['id'])){
         $price = $_POST['harga'];
         $image = $_POST['gambar'];
 
-        $query = "UPDATE public.produk SET judul_produk = '{$name}', deskripsi_produk = '{$description}', harga = '{$price}', gambar = '{$image}'  WHERE id = '{$idnew}'";
+        $query = "UPDATE public.produk_2 SET judul_produk = '{$name}', deskripsi_produk = '{$description}', harga = '{$price}', gambar = '{$image}'  WHERE id = '{$idnew}'";
 
         $result = pg_query($connection, $query); //execute
 

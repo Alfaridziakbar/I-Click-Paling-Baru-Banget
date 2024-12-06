@@ -9,7 +9,7 @@ if(isset($_GET['id'])){
         }
     $id = $_GET['id'];
 
-    $_SESSION['cart'][$id] = array('quantitiy' => $quantity);
+    $_SESSION['cart'][$id] = array('quantity' => $quantity);
 
     echo '<pre>';
     print_r($_SESSION['cart']);
