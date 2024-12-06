@@ -88,4 +88,4 @@ function handleWishlistActions(event) {
         // Tambahkan kode untuk menambahkan produk ke keranjang
     }
 }
-window.onload = loadWishlist;
+window.onload = loadWishlist;w

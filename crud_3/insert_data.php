@@ -20,7 +20,7 @@ if (isset($_POST['add_products'])) { // agar terhubung dengan button ADD
     }
 
     // Query yang aman
-    $query = "INSERT INTO produk (judul_produk, deskripsi_produk, harga, gambar) VALUES ($1, $2, $3, $4)";
+    $query = "INSERT INTO produk_3 (judul_produk, deskripsi_produk, harga, gambar) VALUES ($1, $2, $3, $4)";
     $result = pg_query_params($connection, $query, [$name, $description, $price, $image]);
 
     if (!$result) {

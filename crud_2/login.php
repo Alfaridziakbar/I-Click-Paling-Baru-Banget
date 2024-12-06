@@ -2,15 +2,15 @@
 ob_start();
 session_start();
 
-include 'config.php';
-include 'header.php';
+include '../login/config.php';
+include '../login/header.php';
 $msg = "";
 
 if (isset($_POST['submit'])) {
     $email = pg_escape_string($conn, $_POST['email']);
     $password = pg_escape_string($conn, md5($_POST['password']));
     
-    $sql = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
+    $sql = "SELECT * FROM users_2 WHERE email='{$email}' AND password='{$password}'";
     $result = pg_query($conn, $sql);
 
     if (!$result) {
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     
     if (pg_num_rows($result) === 1) {
         $_SESSION['SESSION_EMAIL'] = $email;
-        header("Location: ../Dashboard/main.php");
+        header("Location: ../crud_2/index.php");
         exit();
     } else {
         $msg = "<div class='alert alert-danger'>Email or password is incorrect.</div>";
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['guest_login'])) {
     $_SESSION['SESSION_EMAIL'] = 'guest@example.com';
     $_SESSION['IS_GUEST'] = true;
-    header("Location: ../Dashboard/main.php");
+    header("Location: ../crud_2/register.php");
     exit();
 }
 ?>
@@ -47,7 +47,7 @@ if (isset($_POST['guest_login'])) {
         <!-- Header -->
         <div class="text-center mb-8">
             <h2 class="text-2xl font-bold text-gray-900">Login</h2>
-            <p class="text-gray-600 mt-2">Masuk ke akun Anda untuk melanjutkan</p>
+            <p class="text-gray-600 mt-2">Verifikasi diri anda sebagai Admin produk</p>
         </div>
 
         <!-- Login Form -->
@@ -100,16 +100,9 @@ if (isset($_POST['guest_login'])) {
         <form method="post" class="mb-6">
             <button type="submit" name="guest_login"
                 class="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <i class="fas fa-user mr-2"></i>Continue as Guest
+                <i class="fas fa-user mr-2"></i>Daftar sebagai admin 
             </button>
         </form>
-
-        <p class="text-center text-sm text-gray-600">
-            Belum punya akun?
-            <a href="register.php" class="font-medium text-blue-600 hover:underline">
-                Daftar
-            </a>
-        </p>
     </div>
 </body>
 </html>

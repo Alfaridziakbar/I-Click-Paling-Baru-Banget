@@ -2,8 +2,8 @@
 ob_start();
 session_start();
 
-include 'config.php';
-include 'header.php';
+include '../login/config.php';
+include '../login/header.php';
 $msg = "";
 
 if (isset($_POST['submit'])) {
@@ -22,25 +22,25 @@ if (isset($_POST['submit'])) {
     $email = pg_escape_string($conn, $_POST['email']);
     $password = pg_escape_string($conn, md5($_POST['password']));
     $confirm_password = pg_escape_string($conn, md5($_POST['confirm-password']));
-    $query = "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'";
+    $query = "SELECT * FROM users_2 WHERE email='{$email}' AND password='{$password}'";
     $result = pg_query($conn, $query);
 
     if (pg_num_rows($result) > 0) {
         $msg = "<div class='alert alert-danger'>Email and password combination already exists.</div>";
     } else {
-        if (pg_num_rows(pg_query($conn, "SELECT * FROM users WHERE email='{$email}'")) > 0) {
+        if (pg_num_rows(pg_query($conn, "SELECT * FROM users_2 WHERE email='{$email}'")) > 0) {
             $msg = "<div class='alert alert-danger'>{$email} - This email address already exists.</div>";
         } else {
             if ($password === $confirm_password) {
                 $id = generate_uuid_v4();
                 // $id = 2;
                 // var_dump($uuid);exit;
-                $sql = "INSERT INTO users (user_id,name, email, password) VALUES ('{$id}','{$name}', '{$email}', '{$password}')";
+                $sql = "INSERT INTO users_2 (user_id,name, email, password) VALUES ('{$id}','{$name}', '{$email}', '{$password}')";
                 $result = pg_query($conn, $sql);
 
                 if ($result) {
                     $_SESSION['SESSION_EMAIL'] = $email;
-                    header("Location: ../login/index.php");
+                    header("Location: ../crud_3/login.php");
                     die();
                 } else {
                     $msg = "<div class='alert alert-danger'>Registration failed. Please try again.</div>";
@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['guest_login'])) {
     $_SESSION['SESSION_EMAIL'] = 'guest@example.com';
     $_SESSION['IS_GUEST'] = true;
-    header("Location: ../Dashboard/index.php");
+    header("Location: ../crud_3/index.php");
     exit();
 }
 ?>
@@ -136,15 +136,9 @@ if (isset($_POST['guest_login'])) {
                 <span class="px-2 bg-white text-gray-500">OR</span>
             </div>
         </div>
-        <form method="post" class="mb-6">
-            <button type="submit" name="guest_login"
-                class="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <i class="fas fa-user mr-2"></i>Continue as Guest
-            </button>
-        </form>
         <p class="text-center text-sm text-gray-600">
             Sudah punya akun?
-            <a href="index.php" class="font-medium text-blue-600 hover:underline">
+            <a href="login.php" class="font-medium text-blue-600 hover:underline">
                 Login
             </a>
         </p>

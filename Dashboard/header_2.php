@@ -132,7 +132,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.php"><img src="../Images/group 1.png" alt=""
+        <a class="navbar-brand" href="main.php"><img src="../Images/group 1.png" alt=""
           style="width: 120px;"></a>
         <button
           class="navbar-toggler"
@@ -145,13 +145,16 @@
   
         <div class="collapse navbar-collapse" id="navbarContent">
           <div class="d-flex align-items-center ms-auto">
-            <a href="../login/index.php" class="nav-link me-3 wishlist-link">
+            <a href="wishlist.html" class="nav-link me-3 wishlist-link">
               <i class="bi bi-heart" style="color: aliceblue;"></i>
             </a>
-            <a href="../login/index.php" class="nav-link me-3 cart-link">
+            <a href="cart-page.php" class="nav-link me-3 cart-link">
               <i class="bi bi-cart" style="color: aliceblue;"></i>
               <span id="cart-count" class="badge bg-danger">0</span>
             </a>
+            <!-- <a href="profile.php" class="nav-link me-3 cart-link">
+            <i class="fa-solid fa-user" style="color: aliceblue;"></i>
+            </a> -->
             <div id="loginStateContainer">
               <!-- Login state content -->
             </div>

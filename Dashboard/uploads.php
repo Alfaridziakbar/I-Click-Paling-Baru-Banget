@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
     if ($upload_ok == 1) {
         if (is_uploaded_file($_FILES["imageUpload"]["tmp_name"])) {
             if (move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $upload_file)) {
-                $sql = "INSERT INTO produk_2 (judul_produk, harga, deskripsi_produk, gambar, lokasi)
+                $sql = "INSERT INTO produk (judul_produk, harga, deskripsi_produk, gambar, lokasi)
                         VALUES ('{$productname}', '{$price}', '{$description}', '{$upload_file}', '{$lokasi}')";
 
                 $result = pg_query($connection, $sql);

@@ -4,8 +4,8 @@ $all_product = pg_query($connection, $sql);
 ?>
 <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="okee mb-0">The Aborigin</h5>
-          <a href="#" class="text-primary text-decoration-none"
-            >Lihat Semua Barang</a>
+          <a href="..\crud_2\login.php" class="text-primary text-decoration-none"
+            >Tambah barang</a>
         </div>
 <div class="products-scroll-container">
     <button class="scroll-button scroll-left hidden" id="scrollLeft1">
@@ -26,7 +26,7 @@ $all_product = pg_query($connection, $sql);
                     <h5 class="card-title product-title">
                         <?php echo $product['judul_produk'];?>
                     </h5>
-                    <p class="product-price mb-0">Rp<?php echo number_format($product['harga'], 0, ',', '.'); ?></p>
+                    <p class="product-price mb-0"><?php echo number_format($product['harga'], 0, ',', '.'); ?></p>
                     <div class="d-flex justify-content-between align-items-center mt-4">
                         <p id="hidden-description" class="d-none">
                             <?php echo $product['deskripsi_produk'];?>

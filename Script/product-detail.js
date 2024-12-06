@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productSold = document.getElementById('product-sold');
     const productDescription = document.getElementById('product-description');
     const addToCartBtn = document.getElementById('add-to-cart');
-    const cartLink = document.querySelector('.nav-link.me-3');
+    const cartIcon = document.querySelector('.nav-link.me-3');
     const quantityDecreaseBtn = document.getElementById('quantity-decrease');
     const quantityIncreaseBtn = document.getElementById('quantity-increase');
     const quantityElement = document.getElementById('quantity');
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (product) {
         productImage.src = product.image || '/api/placeholder/400/400';
         productTitle.textContent = product.title || 'Nama Produk';
-        productPrice.textContent = product.price || 'Harga tidak tersedia';
-        productOriginalPrice.textContent = product.originalPrice || '';
+        productPrice.textContent = product.price ? formatPrice(product.price) : 'Harga tidak tersedia';
+        productOriginalPrice.textContent = product.originalPrice ? formatPrice(product.original) : '';
         productRating.textContent = product.rating || '0';
         productSold.textContent = product.sold || '0';
         productDescription.textContent = product.description || 'Deskripsi tidak tersedia';
@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mengelola jumlah produk
-    let quantity = 1;
+    let quantity =  1;
     quantityElement.textContent = quantity;
 
     quantityDecreaseBtn.addEventListener('click', () => {
-        quantity = Math.max(1, quantity - 1);
+        quantity = Math.max( quantity - 1);
         quantityElement.textContent = quantity;
     });
 
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
      // Fungsi untuk menampilkan notifikasi singkat di bawah ikon keranjang
      function showNotification() {
+        if (!cartIcon) return; // Pastikan elemen ada sebelum menambahkan notifikasi
         const notification = document.createElement('div');
         notification.style.cssText = `
             position: absolute;
