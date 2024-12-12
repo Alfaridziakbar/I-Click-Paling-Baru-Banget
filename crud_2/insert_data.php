@@ -26,8 +26,8 @@ if (isset($_POST['add_products'])) { // agar terhubung dengan button ADD
     if (!$result) {
         die("Query Failed: " . pg_last_error($connection));
     } else {
-        header('location:index.php?insert_msg=Your data has been added successfully');
-        exit();
+        exit();        header('location:index.php?insert_msg=Your data has been added successfully');
+
     }
 }
 ?>

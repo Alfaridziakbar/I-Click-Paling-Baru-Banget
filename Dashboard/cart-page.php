@@ -134,8 +134,6 @@
         }
     
         checkoutButton.addEventListener("click", redirectToCheckout);
-                
-
     </script>
 </body>
 </html>

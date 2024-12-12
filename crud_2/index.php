@@ -47,10 +47,6 @@
 
             ?>
            
-                <!-- <td>2</td>
-                <td>Akbar</td>
-                <td>Burnok</td>
-                <td>19</td> -->
         </tbody>
     </table>
 
